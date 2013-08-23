@@ -1,7 +1,7 @@
 /**
  * The angular tabs module
  * @author: nerv
- * @version: 0.1, 2012-08-24
+ * @version: 0.2, 2012-08-24
  */
 
 
@@ -14,7 +14,7 @@ angular
     .module( 'tabs', [])
 
 
-    .directive( 'ngTabSet', function() {
+    .directive( 'ngTabs', function() {
         return {
             scope: true,
             restrict: 'EAC',
@@ -41,7 +41,7 @@ angular
         return {
             scope: false,
             restrict: 'EAC',
-            require: '^ngTabSet',
+            require: '^ngTabs',
             link: function( scope, element, attributes, controller ) {
                 var index = controller.getTabHeadIndex();
 
@@ -67,7 +67,7 @@ angular
         return {
             scope: false,
             restrict: 'EAC',
-            require: '^ngTabSet',
+            require: '^ngTabs',
             link: function( scope, element, attributes, controller ) {
                 var index = controller.getTabBodyIndex();
 

@@ -12,13 +12,13 @@
 
 ## Includes
 ### Directives
-- **ng-tab-set** - area of ​​the container tabs
+- **ng-tabs** - area of ​​the container tabs
 - **ng-tab-head** - tab head
 - **ng-tab-body** - tab body
 
-### Example / Пример
+### Example
 ```html
-<div ng-tab-set>
+<div ng-tabs>
     <div ng-tab-head>First tab</div>
     <div ng-tab-head="active">Second tab</div>
     <div ng-tab-body>Content 1</div>
@@ -40,13 +40,13 @@ Sorry for my english : )
 
 ## Includes / Включает
 ### Directives / Директивы
-- **ng-tab-set** - задает область контейнера табов
+- **ng-tabs** - задает область контейнера табов
 - **ng-tab-head** - голова таба
 - **ng-tab-body** - тело таба
 
 ### Example / Пример
 ```html
-<div ng-tab-set>
+<div ng-tabs>
     <div ng-tab-head>First tab</div>
     <div ng-tab-head="active">Second tab</div>
     <div ng-tab-body>Content 1</div>
