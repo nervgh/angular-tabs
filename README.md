@@ -16,7 +16,7 @@
 - **ng-tab-head** - tab head
 - **ng-tab-body** - tab body
 
-### Example
+## Example
 ```html
 <div ng-tabs>
     <div ng-tab-head>First tab</div>
@@ -44,7 +44,7 @@ Sorry for my english : )
 - **ng-tab-head** - голова таба
 - **ng-tab-body** - тело таба
 
-### Example / Пример
+## Example / Пример
 ```html
 <div ng-tabs>
     <div ng-tab-head>First tab</div>
