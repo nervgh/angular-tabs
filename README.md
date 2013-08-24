@@ -16,6 +16,15 @@
 - **ng-tab-head** - tab head
 - **ng-tab-body** - tab body
 
+## Scope
+The `ng-tabs` directive creates a isolate scope. Variables of this scope:
+```javascript
+tabs: {
+    index: {Number},  // current tab index
+    count: {Number}  // tabs count
+};
+```
+
 ## Example
 ```html
 <div ng-tabs>
@@ -43,6 +52,15 @@ Sorry for my english : )
 - **ng-tabs** - задает область контейнера табов
 - **ng-tab-head** - голова таба
 - **ng-tab-body** - тело таба
+
+## Scope / Область видимости
+Директива `ng-tabs` создает изолированную область видимости, в которой доступны переменные:
+```javascript
+tabs: {
+    index: {Number},  // current tab index
+    count: {Number}  // tabs count
+};
+```
 
 ## Example / Пример
 ```html

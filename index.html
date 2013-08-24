@@ -16,6 +16,17 @@
         <h1>Angular simple tabs</h1>
 
         <div ng-tabs class="tabbable">
+
+            <div class="control-group">
+                <button class="btn btn-danger" ng-click="tabs.index = 1">Select first tab</button>
+                <button class="btn btn-warning" ng-click="tabs.index = 2">Select second tab</button>
+            </div>
+
+            <div class="control-group">
+                <button class="btn btn-primary" ng-click="tabs.index = tabs.index - 1" ng-disabled="tabs.index == 1">Prev tab</button>
+                <button class="btn btn-primary" ng-click="tabs.index = tabs.index + 1" ng-disabled="tabs.index == tabs.count" >Next tab</button>
+            </div>
+
             <ul class="nav nav-tabs">
                 <li ng-tab-head>
                     <a href="#" ng-click="$event.preventDefault()">Tab 1</a>
@@ -45,6 +56,7 @@
                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                 </div>
                 <div ng-tab-body class="tab-pane">
+                    <p>Some content</p>
 
                     <div ng-tabs class="tabbable">
                         <ul class="nav nav-tabs">

@@ -1,7 +1,7 @@
 /**
  * The angular tabs module
  * @author: nerv
- * @version: 0.2.1, 2012-08-24
+ * @version: 0.2.2, 2012-08-24
  */
 
 
@@ -19,14 +19,16 @@ angular
             scope: true,
             restrict: 'EAC',
             controller: function( $scope ) {
-                $scope.tabs = [];
+                $scope.tabs = {
+                    index: 0,
+                    count: 0
+                };
 
-                this.headIndex = -1;
-                this.bodyIndex = -1;
+                this.headIndex = 0;
+                this.bodyIndex = 0;
 
                 this.getTabHeadIndex = function() {
-                    $scope.tabs.push({ active: false });
-                    return ++this.headIndex;
+                    return $scope.tabs.count = ++this.headIndex;
                 };
 
                 this.getTabBodyIndex = function() {
@@ -47,19 +49,16 @@ angular
                 var value = attributes.ngTabHead;
                 var active = /[-*\/%^=!<>&|]/.test( value ) ? scope.$eval( value ) : !!value;
 
-                scope.tabs[ index ].active = active;
+                scope.tabs.index = scope.tabs.index || ( active ? index : null );
 
                 element.bind( 'click', function() {
-                    angular.forEach( scope.tabs, function( item ) {
-                        item.active = false;
-                    });
-                    scope.tabs[ index ].active = true;
+                    scope.tabs.index = index;
                     scope.$$phase || scope.$apply();
                 });
 
-                scope.$watch( 'tabs', function() {
-                    element.toggleClass( 'active', scope.tabs[ index ].active );
-                }, true );
+                scope.$watch( 'tabs.index', function() {
+                    element.toggleClass( 'active', scope.tabs.index === index );
+                });
             }
         };
     })
@@ -73,9 +72,9 @@ angular
             link: function( scope, element, attributes, controller ) {
                 var index = controller.getTabBodyIndex();
 
-                scope.$watch( 'tabs', function() {
-                    element.css( 'display', scope.tabs[ index ].active ? 'block' : 'none' );
-                }, true );
+                scope.$watch( 'tabs.index', function() {
+                    element.css( 'display', scope.tabs.index === index ? 'block' : 'none' );
+                });
             }
         };
     });
