@@ -1,7 +1,7 @@
 /**
  * The angular tabs module
  * @author: nerv
- * @version: 0.2.2, 2012-08-24
+ * @version: 0.2.4, 2012-08-25
  */
 
 
@@ -64,7 +64,7 @@ angular
     })
 
 
-    .directive( 'ngTabBody', function() {
+    .directive( 'ngTabBody', [ '$animate', function( $animate ) {
         return {
             scope: false,
             restrict: 'EAC',
@@ -72,9 +72,10 @@ angular
             link: function( scope, element, attributes, controller ) {
                 var index = controller.getTabBodyIndex();
 
-                scope.$watch( 'tabs.index', function() {
-                    element.css( 'display', scope.tabs.index === index ? 'block' : 'none' );
+                scope.$watch( 'tabs.index', function( ) {
+                    element.toggleClass( 'ng-show', scope.tabs.index === index );
+                    $animate.addClass( element, attributes.ngTabBody );
                 });
             }
         };
-    });
+    }]);

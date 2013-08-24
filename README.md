@@ -1,4 +1,4 @@
-﻿#Angular simple tabs
+﻿#Angular: simple tabs with animation
 
 ---
 
@@ -31,7 +31,7 @@ tabs: {
     <div ng-tab-head>First tab</div>
     <div ng-tab-head="active">Second tab</div>
     <div ng-tab-body>Content 1</div>
-    <div ng-tab-body>Content 2</div>
+    <div ng-tab-body="animation">Content 2</div>
 </div>
 ```
 
@@ -68,6 +68,6 @@ tabs: {
     <div ng-tab-head>First tab</div>
     <div ng-tab-head="active">Second tab</div>
     <div ng-tab-body>Content 1</div>
-    <div ng-tab-body>Content 2</div>
+    <div ng-tab-body="animation">Content 2</div>
 </div>
 ```
