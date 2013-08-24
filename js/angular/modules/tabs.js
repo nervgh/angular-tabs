@@ -1,7 +1,7 @@
 /**
  * The angular tabs module
  * @author: nerv
- * @version: 0.2, 2012-08-24
+ * @version: 0.2.1, 2012-08-24
  */
 
 
@@ -44,8 +44,10 @@ angular
             require: '^ngTabs',
             link: function( scope, element, attributes, controller ) {
                 var index = controller.getTabHeadIndex();
+                var value = attributes.ngTabHead;
+                var active = /[-*\/%^=!<>&|]/.test( value ) ? scope.$eval( value ) : !!value;
 
-                scope.tabs[ index ].active = !!attributes.ngTabHead;
+                scope.tabs[ index ].active = active;
 
                 element.bind( 'click', function() {
                     angular.forEach( scope.tabs, function( item ) {
