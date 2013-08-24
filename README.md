@@ -5,7 +5,7 @@
 # Eng
 
 ##About
-**tabs** is module for [angular](http://angularjs.org/) framework
+**tabs** is module for [angular](http://angularjs.org/) framework. [Live demo](http://nervgh.github.io/pages/angular-tabs/)
 
 ## Requires
 - the [angularjs](https://github.com/angular/angular.js) framework
@@ -42,7 +42,7 @@ Sorry for my english : )
 # Rus
 
 ##About / О модуле
-**tabs** - модуль табов для фреймворка [angular](http://angularjs.org/)
+**tabs** - модуль табов для фреймворка [angular](http://angularjs.org/). [Live demo](http://nervgh.github.io/pages/angular-tabs/)
 
 ## Requires / Требует
 - [angularjs](https://github.com/angular/angular.js) фреймворк
