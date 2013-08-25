@@ -2,7 +2,7 @@
 
 
 angular
-    .module( 'app', [ 'ngAnimate', 'tabs' ])
+    .module( 'app', [ 'tabs' ])
 
 
     .controller( 'TestController', function() {
